@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevHub.net — Downloads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0a0a0a; --bg2:#121212; --panel:rgba(255,255,255,0.06);
+      --text:#fff; --muted:#bfbfbf; --accent:#00e8ff; --accent2:#00b3c6;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text)}
+    header{position:sticky;top:0;z-index:10;background:rgba(0,0,0,0.5);backdrop-filter:blur(10px);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06)}
+    .brand{font-weight:600}
+    nav a{color:var(--text);text-decoration:none;margin:0 0.75rem;font-weight:500;opacity:0.9;transition:color .2s ease, opacity .2s ease}
+    nav a:hover{color:var(--accent);opacity:1}
+    nav a.active{color:var(--accent)}
+    section{padding:3rem 2rem;max-width:1100px;margin:0 auto}
+    h1{margin-top:0}
+    .panel{background:var(--panel);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.5rem;backdrop-filter:blur(6px)}
+    .empty{text-align:center;color:var(--muted);padding:2rem;border:1px dashed rgba(255,255,255,0.18);border-radius:12px;background:rgba(255,255,255,0.03)}
+    footer{padding:2rem;color:#9aa6b2;text-align:center}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">DevHub.net</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a class="active" href="downloads.html">Downloads</a>
+      <a href="support.html">Support</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <section>
+    <h1>Downloads</h1>
+    <div class="empty panel">
+      We’re gearing up for the first drop.  
+      Check back soon or join our Discord for updates.
+    </div>
+  </section>
+
+  <footer>© DevHub.net</footer>
+</body>
+</html>

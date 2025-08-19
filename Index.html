@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevHub — Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0a0a0a; --bg2:#121212; --panel:rgba(255,255,255,0.06);
+      --text:#fff; --muted:#bfbfbf; --accent:#00e8ff; --accent2:#00b3c6;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text)}
+    header{
+      position:sticky;top:0;z-index:10;
+      background:rgba(0,0,0,0.5);backdrop-filter:blur(10px);
+      padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;
+      border-bottom:1px solid rgba(255,255,255,0.06)
+    }
+    .brand{font-weight:600}
+    nav a{
+      color:var(--text);text-decoration:none;margin:0 0.75rem;font-weight:500;opacity:0.9;
+      transition:color .2s ease, opacity .2s ease
+    }
+    nav a:hover{color:var(--accent);opacity:1}
+    nav a.active{color:var(--accent)}
+    .hero{
+      text-align:center;padding:6rem 2rem 4rem;
+      background:radial-gradient(1200px 600px at 50% -10%, #1b1b1b 0%, transparent 60%)
+    }
+    .hero h1{font-size:3rem;margin:0 0 0.5rem}
+    .hero p{color:var(--muted);max-width:700px;margin:0.5rem auto 1.5rem}
+    .cta-btn{
+      background:linear-gradient(90deg,var(--accent),var(--accent2));color:#001014;border:none;
+      border-radius:8px;padding:0.9rem 1.6rem;font-weight:700;cursor:pointer;
+      box-shadow:0 8px 24px rgba(0,232,255,0.15);transition:transform .15s ease
+    }
+    .cta-btn:hover{transform:translateY(-2px)}
+    section{padding:3rem 2rem;max-width:1100px;margin:0 auto}
+    h2{margin-top:0}
+    .panel{
+      background:var(--panel);border:1px solid rgba(255,255,255,0.08);
+      border-radius:14px;padding:1.5rem;backdrop-filter:blur(6px)
+    }
+    .empty{
+      text-align:center;color:var(--muted);padding:2rem;
+      border:1px dashed rgba(255,255,255,0.18);border-radius:12px;
+      background:rgba(255,255,255,0.03)
+    }
+    footer{padding:2rem;color:#9aa6b2;text-align:center}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">DevHub.net</div>
+    <nav>
+      <a class="active" href="index.html">Home</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="support.html">Support</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>DevHub</h1>
+    <p>Your hub for tools, plugins, and resources — built for speed, clarity, and control.</p>
+    <a href="downloads.html" class="cta-btn">Browse Downloads</a>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ</h2>
+    <div class="panel">
+      <p><strong>When will releases be available?</strong><br/>We’re working hard on the first drop — keep an eye on our Discord for updates.</p>
+      <p><strong>How do I get support?</strong><br/>Head over to our <a href="support.html" style="color:var(--accent)">Support page</a> to submit a ticket.</p>
+    </div>
+  </section>
+
+  <footer>© DevHub.net — All rights reserved.</footer>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevHub — Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0a0a0a; --bg2:#121212; --panel:rgba(255,255,255,0
