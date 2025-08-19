@@ -1,81 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DevHub — Support</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0a0a0a; --bg2: #121212; --panel: rgba(255,255,255,0.06);
-      --text: #fff; --muted: #bfbfbf; --accent: #00e8ff; --accent2: #00b3c6; --danger: #ff5c7c;
+      --bg:#0a0a0a; --bg2:#121212; --panel:rgba(255,255,255,0.06);
+      --text:#fff; --muted:#bfbfbf; --accent:#00e8ff; --accent2:#00b3c6;
+      --danger:#ff5c7c; --ok-bg:rgba(0,232,255,0.12); --ok-br:rgba(0,232,255,0.3);
     }
-    * { box-sizing: border-box }
-    body {
-      margin: 0; font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, var(--bg), var(--bg2)); color: var(--text);
-    }
-    header {
-      position: sticky; top: 0; z-index: 10;
-      background: rgba(0,0,0,0.5); backdrop-filter: blur(10px);
-      padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .brand { font-weight: 600 }
-    nav a {
-      color: var(--text); text-decoration: none; margin: 0 0.75rem; font-weight: 500; opacity: 0.9;
-      transition: color .2s ease, opacity .2s ease;
-    }
-    nav a:hover { color: var(--accent); opacity: 1 }
-    nav a.active { color: var(--accent) }
-    section { padding: 3rem 2rem; max-width: 1100px; margin: 0 auto }
-    h1 { margin-top: 0 }
-    .tabs {
-      display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;
-      background: rgba(255,255,255,0.03); padding: 0.5rem;
-      border-radius: 12px; border: 1px solid rgba(255,255,255,0.06);
-    }
-    .tab {
-      appearance: none; border: none; cursor: pointer; font: inherit; color: var(--text);
-      padding: 0.6rem 1rem; border-radius: 10px; opacity: 0.85;
-      transition: background .2s ease, opacity .2s ease, color .2s ease;
-    }
-    .tab:hover { opacity: 1 }
-    .tab.active {
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      color: #001014; opacity: 1; font-weight: 700;
-    }
-    .panel {
-      background: var(--panel); border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px; padding: 1.5rem; backdrop-filter: blur(6px);
-    }
-    form { display: grid; gap: 1rem }
-    .row { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr }
-    @media (max-width: 760px) { .row { grid-template-columns: 1fr } }
-    .field { display: flex; flex-direction: column; gap: 0.4rem }
-    label { font-weight: 600 }
-    .req { color: var(--danger); margin-left: 0.25rem }
-    input[type="text"], input[type="email"], textarea {
-      background: #0f0f11; border: 1px solid rgba(255,255,255,0.1); color: var(--text);
-      padding: 0.8rem 0.9rem; border-radius: 10px; outline: none;
-    }
-    textarea { min-height: 160px; resize: vertical }
-    .submit {
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      color: #001014; border: none; border-radius: 10px;
-      padding: 0.85rem 1.4rem; font-weight: 700; cursor: pointer;
-    }
-    .note { color: #9aa6b2; font-size: 0.9rem }
-    .success {
-      display: none; margin-top: 0.5rem; padding: 0.75rem 1rem; border-radius: 10px;
-      background: rgba(0,232,255,0.12); border: 1px solid rgba(0,232,255,0.3); color: #c9fbff;
-    }
-    .error-text { color: #ff98ac; font-size: 0.92rem }
-    footer { padding: 2rem; color: #9aa6b2; text-align: center }
+    * { box-sizing:border-box }
+    body { margin:0; font-family:'Poppins',sans-serif; color:var(--text); background:linear-gradient(180deg,var(--bg),var(--bg2)) }
+    header { position:sticky; top:0; z-index:10; background:rgba(0,0,0,0.5); backdrop-filter:blur(10px); padding:1rem 2rem; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.06) }
+    .brand { font-weight:600 }
+    nav a { color:var(--text); text-decoration:none; margin:0 0.75rem; font-weight:500; opacity:0.9; transition:color .2s,opacity .2s }
+    nav a:hover { color:var(--accent); opacity:1 }
+    nav a.active { color:var(--accent) }
+    section { padding:3rem 2rem; max-width:1100px; margin:0 auto }
+    h1 { margin-top:0 }
+
+    .tabs { position:relative; z-index:2; display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem; background:rgba(255,255,255,0.03); padding:0.5rem; border-radius:12px; border:1px solid rgba(255,255,255,0.06) }
+    .tab { appearance:none; border:none; cursor:pointer; font:inherit; padding:0.6rem 1rem; border-radius:10px; background:none; color:rgba(255,255,255,0.95); transition:background .2s, color .2s }
+    .tab:hover { color:#fff }
+    .tab.active { background:linear-gradient(90deg,var(--accent),var(--accent2)); color:#001014; font-weight:700 }
+
+    .panel { background:var(--panel); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:1.5rem; backdrop-filter:blur(6px) }
+    .view { display:none }
+    .view.active { display:block }
+
+    .field { display:flex; flex-direction:column; gap:0.4rem; margin-bottom:1rem }
+    label { font-weight:600 }
+    .req { color:var(--danger); margin-left:0.25rem }
+    input[type="text"], input[type="email"], textarea { background:#0f0f11; border:1px solid rgba(255,255,255,0.1); color:var(--text); padding:0.8rem 0.9rem; border-radius:10px; outline:none }
+    input::placeholder, textarea::placeholder { color:rgba(255,255,255,0.6) }
+    textarea { min-height:120px; resize:vertical }
+
+    .submit { background:linear-gradient(90deg,var(--accent),var(--accent2)); color:#001014; border:none; border-radius:10px; padding:0.85rem 1.4rem; font-weight:700; cursor:pointer }
+    .success { display:none; margin-top:0.75rem; padding:0.75rem 1rem; border-radius:10px; background:var(--ok-bg); border:1px solid var(--ok-br); color:#c9fbff }
+
+    /* Drag & drop */
+    .dropzone { border:1.5px dashed rgba(255,255,255,0.25); border-radius:12px; padding:1rem; background:rgba(255,255,255,0.03); display:flex; flex-direction:column; align-items:center; gap:0.5rem; transition:border-color .2s, background .2s; cursor:pointer }
+    .dropzone.dragover { border-color:var(--accent); background:rgba(0,232,255,0.08) }
+    .hint { color:var(--muted); font-size:0.95rem }
+    .file-list { display:grid; gap:0.5rem; margin-top:0.5rem }
+    .file-chip { display:flex; align-items:center; justify-content:space-between; gap:0.75rem; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); padding:0.5rem 0.75rem; border-radius:10px; font-size:0.95rem }
+    .chip-remove { background:none; border:none; color:#ff97aa; cursor:pointer; font-weight:700 }
+
+    footer { padding:2rem; color:#9aa6b2; text-align:center }
   </style>
 </head>
 <body>
-
   <header>
     <div class="brand">DevHub</div>
     <nav>
@@ -89,46 +65,90 @@
   <section>
     <h1>Support</h1>
 
-    <div class="tabs">
-      <button class="tab active" data-category="Report player">Report player</button>
-      <button class="tab" data-category="General Support">General Support</button>
-      <button class="tab" data-category="Ban Appeal">Ban Appeal</button>
+    <div class="tabs" role="tablist" aria-label="Support categories">
+      <button class="tab active" type="button" role="tab" aria-selected="true" data-target="form-report">Report Player</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-target="form-general">General Support</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-target="form-appeal">Ban Appeal</button>
     </div>
 
     <div class="panel">
-      <form id="support-form">
-        <input type="hidden" name="category" id="category" value="Report player" />
-
+      <!-- REPORT PLAYER -->
+      <form id="form-report" class="view active" novalidate>
         <div class="field">
-          <label for="title">Title <span class="req">*</span></label>
-          <input id="title" name="title" type="text" required />
-          <div class="error-text" id="err-title" hidden>Title is required.</div>
+          <label for="report-title">Title <span class="req">*</span></label>
+          <input id="report-title" type="text" placeholder="Brief title">
+          <div class="error-text" id="err-report-title" hidden>Title is required.</div>
         </div>
-
         <div class="field">
-          <label for="description">Description <span class="req">*</span></label>
-          <textarea id="description" name="description" required></textarea>
-          <div class="error-text" id="err-description" hidden>Description is required.</div>
+          <label for="report-desc">Description <span class="req">*</span></label>
+          <textarea id="report-desc" placeholder="Describe your report"></textarea>
+          <div class="error-text" id="err-report-desc" hidden>Description is required.</div>
         </div>
-
-        <div class="row">
-          <div class="field">
-            <label for="discord">Discord user <span class="req">*</span></label>
-            <input id="discord" name="discord" type="text" required />
-            <div class="error-text" id="err-discord" hidden>Discord user is required.</div>
-          </div>
-          <div class="field">
-            <label for="email">Email <span class="note">(optional)</span></label>
-            <input id="email" name="email" type="email" />
-          </div>
+        <div class="field">
+          <label for="reported-users">Player usernames you are reporting <span class="req">*</span></label>
+          <input id="reported-users" type="text" placeholder="e.g. Griefer01, Hacker_Pro">
+          <div class="error-text" id="err-reported-users" hidden>Please enter usernames.</div>
         </div>
-
+        <div class="field">
+          <label>Media proof <span class="req">*</span></label>
+          <div id="dropzone" class="dropzone">
+            <div class="hint">Drag & drop images/videos here, or click to browse</div>
+            <input id="file-input" type="file" accept="image/*,video/*" multiple hidden>
+          </div>
+          <div id="file-list" class="file-list"></div>
+          <div class="error-text" id="err-report-files" hidden>Please attach at least one file.</div>
+        </div>
         <button type="submit" class="submit">Submit</button>
-        <div class="success" id="success">✅ Submitted! Check Discord.</div>
       </form>
+
+      <!-- GENERAL SUPPORT -->
+      <form id="form-general" class="view" novalidate>
+        <div class="field">
+          <label for="gen-title">Title <span class="req">*</span></label>
+          <input id="gen-title" type="text" placeholder="Brief title">
+          <div class="error-text" id="err-gen-title" hidden>Title is required.</div>
+        </div>
+        <div class="field">
+          <label for="gen-desc">Description <span class="req">*</span></label>
+          <textarea id="gen-desc" placeholder="Describe your issue"></textarea>
+          <div class="error-text" id="err-gen-desc" hidden>Description is required.</div>
+        </div>
+        <div class="field">
+          <label for="gen-discord">Discord user <span class="req">*</span></label>
+          <input id="gen-discord" type="text" placeholder="Username#1234">
+          <div class="error-text" id="err-gen-discord" hidden>Discord user is required.</div>
+        </div>
+        <div class="field">
+          <label for="gen-email">Email <span class="note">(optional)</span></label>
+          <input id="gen-email" type="email" placeholder="you@example.com">
+        </div>
+        <button type="submit" class="submit">Submit</button>
+      </form>
+
+      <!-- BAN APPEAL -->
+      <form id="form-appeal" class="view" novalidate>
+        <div class="field">
+          <label for="appeal-title">Title <span class="req">*</span></label>
+          <input id="appeal-title" type="text" placeholder="Brief title">
+          <div class="error-text" id="err-appeal-title" hidden>Title is required.</div>
+        </div>
+        <div class="field">
+          <label for="appeal-desc">Description <span class="req">*</span></label>
+          <textarea id="appeal-desc" placeholder="Describe your appeal"></textarea>
+          <div class="error-text" id="err-appeal-desc" hidden>Description is required.</div>
+        </div>
+        <div class="field">
+          <label for="appeal-username">Your in‑game username <span class="req">*</span></label>
+          <input id="appeal-username" type="text" placeholder="YourIGN">
+          <div class="error-text" id="err-appeal-username" hidden>Username is required.</div>
+        </div>
+        <button type="submit" class="submit">Submit</button>
+      </form>
+
+      <div class="success" id="success">✅ Your ticket has been recorded.</div>
     </div>
 
-    <p class="note" style="margin-top:1rem">We will respond in 1-3 days.</p>
+    <p class="note" style="margin-top:1rem">We will respond in 1–3 days.</p>
   </section>
 
   <footer>© DevHub</footer>
@@ -136,34 +156,155 @@
   <script>
     const WORKER_URL = "https://discordwebhook.steamjustlol123.workers.dev/";
 
-    const tabs = document.querySelectorAll(".tab");
-    const categoryInput = document.getElementById("category");
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-        tabs.forEach(t => t.classList.remove("active"));
-        tab.classList.add("active");
-        categoryInput.value = tab.dataset.category;
+    // Tabs: align data-target with form IDs
+    const tabs = Array.from(document.querySelectorAll(".tab"));
+    const successBox = document.getElementById("success");
+    function activateView(targetId) {
+      document.querySelectorAll(".view").forEach(v => v.classList.toggle("active", v.id === targetId));
+      if (successBox) successBox.style.display = "none";
+    }
+    tabs.forEach(btn => {
+      btn.addEventListener("click", () => {
+        tabs.forEach(t => { t.classList.remove("active"); t.setAttribute("aria-selected","false"); });
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected","true");
+        const targetId = btn.dataset.target;
+        const view = document.getElementById(targetId);
+        if (view) activateView(targetId);
       });
+      if (!btn.getAttribute("type")) btn.setAttribute("type","button");
     });
 
-    const form = document.getElementById("support-form");
-    const successBox = document.getElementById("success");
-
-    function showErr(id, show) {
-      const el = document.getElementById(id);
-      if (el) el.hidden = !show;
+    // Report: drag & drop
+    const dropzone = document.getElementById("dropzone");
+    const fileInput = document.getElementById("file-input");
+    const fileList = document.getElementById("file-list");
+    const selectedFiles = [];
+    function renderFiles() {
+      fileList.innerHTML = "";
+      selectedFiles.forEach((f, i) => {
+        const chip = document.createElement("div");
+        chip.className = "file-chip";
+        chip.innerHTML = `<span>${f.name} (${Math.round(f.size/1024)} KB)</span><button type="button" class="chip-remove">Remove</button>`;
+        chip.querySelector(".chip-remove").onclick = () => { selectedFiles.splice(i,1); renderFiles(); };
+        fileList.appendChild(chip);
+      });
+    }
+    function addFiles(list) {
+      const allow = ["image/","video/"];
+      Array.from(list).forEach(f => { if (allow.some(p => f.type.startsWith(p))) selectedFiles.push(f); });
+      renderFiles();
+    }
+    if (dropzone) {
+      dropzone.addEventListener("click", () => fileInput.click());
+      dropzone.addEventListener("dragover", e => { e.preventDefault(); dropzone.classList.add("dragover"); });
+      dropzone.addEventListener("dragleave", () => dropzone.classList.remove("dragover"));
+      dropzone.addEventListener("drop", e => { e.preventDefault(); dropzone.classList.remove("dragover"); addFiles(e.dataTransfer.files); });
+      fileInput.addEventListener("change", e => addFiles(e.target.files));
     }
 
-    form.addEventListener("submit", async (e) => {
+    // Helpers
+    function showErr(id, show) { const el = document.getElementById(id); if (el) el.hidden = !show; }
+    async function postFormData(fd) {
+      const res = await fetch(WORKER_URL, { method: "POST", body: fd });
+      return res.ok;
+    }
+
+    // REPORT submit
+    document.getElementById("form-report").addEventListener("submit", async (e) => {
       e.preventDefault();
       successBox.style.display = "none";
 
-      const title = document.getElementById("title").value.trim();
-      const description = document.getElementById("description").value.trim();
-      const discord = document.getElementById("discord").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const category = categoryInput.value;
+      const title = document.getElementById("report-title").value.trim();
+      const desc = document.getElementById("report-desc").value.trim();
+      const users = document.getElementById("reported-users").value.trim();
 
-      showErr("err-title", !title);
-      showErr("err-description", !description);
-      show
+      showErr("err-report-title", !title);
+      showErr("err-report-desc", !desc);
+      showErr("err-reported-users", !users);
+      showErr("err-report-files", selectedFiles.length === 0);
+      if (!title || !desc || !users || selectedFiles.length === 0) return;
+
+      const fd = new FormData();
+      fd.append("category", "Report player");
+      fd.append("title", title);
+      fd.append("description", desc);
+      fd.append("reportedUsers", users);
+      selectedFiles.forEach(f => fd.append("files[]", f, f.name));
+
+      const ok = await postFormData(fd);
+      if (ok) {
+        e.target.reset();
+        selectedFiles.splice(0, selectedFiles.length);
+        renderFiles();
+        successBox.textContent = "✅ Your ticket has been recorded.";
+        successBox.style.display = "block";
+      } else {
+        alert("Submission failed. Please try again.");
+      }
+    });
+
+    // GENERAL submit
+    document.getElementById("form-general").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      successBox.style.display = "none";
+
+      const title = document.getElementById("gen-title").value.trim();
+      const desc = document.getElementById("gen-desc").value.trim();
+      const discord = document.getElementById("gen-discord").value.trim();
+      const email = document.getElementById("gen-email").value.trim();
+
+      showErr("err-gen-title", !title);
+      showErr("err-gen-desc", !desc);
+      showErr("err-gen-discord", !discord);
+      if (!title || !desc || !discord) return;
+
+      const fd = new FormData();
+      fd.append("category", "General Support");
+      fd.append("title", title);
+      fd.append("description", desc);
+      fd.append("discord", discord);
+      if (email) fd.append("email", email);
+
+      const ok = await postFormData(fd);
+      if (ok) {
+        e.target.reset();
+        successBox.textContent = "✅ Your ticket has been recorded.";
+        successBox.style.display = "block";
+      } else {
+        alert("Submission failed. Please try again.");
+      }
+    });
+
+    // APPEAL submit
+    document.getElementById("form-appeal").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      successBox.style.display = "none";
+
+      const title = document.getElementById("appeal-title").value.trim();
+      const desc = document.getElementById("appeal-desc").value.trim();
+      const ign = document.getElementById("appeal-username").value.trim();
+
+      showErr("err-appeal-title", !title);
+      showErr("err-appeal-desc", !desc);
+      showErr("err-appeal-username", !ign);
+      if (!title || !desc || !ign) return;
+
+      const fd = new FormData();
+      fd.append("category", "Ban Appeal");
+      fd.append("title", title);
+      fd.append("description", desc);
+      fd.append("username", ign);
+
+      const ok = await postFormData(fd);
+      if (ok) {
+        e.target.reset();
+        successBox.textContent = "✅ Your ticket has been recorded.";
+        successBox.style.display = "block";
+      } else {
+        alert("Submission failed. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
