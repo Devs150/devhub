@@ -3,49 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DevHub.net — Support</title>
+  <title>DevHub — Support</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0a0a0a; --bg2:#121212; --panel:rgba(255,255,255,0.06);
-      --text:#fff; --muted:#bfbfbf; --accent:#00e8ff; --accent2:#00b3c6; --danger:#ff5c7c;
+    :root {
+      --bg: #0a0a0a; --bg2: #121212; --panel: rgba(255,255,255,0.06);
+      --text: #fff; --muted: #bfbfbf; --accent: #00e8ff; --accent2: #00b3c6; --danger: #ff5c7c;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text)}
-    header{position:sticky;top:0;z-index:10;background:rgba(0,0,0,0.5);backdrop-filter:blur(10px);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06)}
-    .brand{font-weight:600}
-    nav a{color:var(--text);text-decoration:none;margin:0 0.75rem;font-weight:500;opacity:0.9;transition:color .2s ease, opacity .2s ease}
-    nav a:hover{color:var(--accent);opacity:1}
-    nav a.active{color:var(--accent)}
-    section{padding:3rem 2rem;max-width:1100px;margin:0 auto}
-    h1,h2{margin-top:0}
-    .panel{background:var(--panel);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.5rem;backdrop-filter:blur(6px)}
-    .tabs{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem;background:rgba(255,255,255,0.03);padding:0.5rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06)}
-    .tab{appearance:none;border:none;cursor:pointer;font:inherit;color:var(--text);padding:0.6rem 1rem;border-radius:10px;opacity:0.85;transition:background .2s ease, opacity .2s ease, color .2s ease}
-    .tab:hover{opacity:1}
-    .tab.active{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#001014;opacity:1;font-weight:700}
-    form{display:grid;gap:1rem}
-    .row{display:grid;gap:1rem;grid-template-columns:1fr 1fr}
-    @media (max-width:760px){.row{grid-template-columns:1fr}}
-    .field{display:flex;flex-direction:column;gap:0.4rem}
-    label{font-weight:600}
-    .req{color:var(--danger);margin-left:0.25rem}
-    input[type="text"], input[type="email"], textarea{
-      background:#0f0f11;border:1px solid rgba(255,255,255,0.1);color:var(--text);padding:0.8rem 0.9rem;border-radius:10px;outline:none;
+    * { box-sizing: border-box }
+    body {
+      margin: 0; font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, var(--bg), var(--bg2)); color: var(--text);
     }
-    textarea{min-height:160px;resize:vertical}
-    .submit{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#001014;border:none;border-radius:10px;padding:0.85rem 1.4rem;font-weight:700;cursor:pointer}
-    .note{color:#9aa6b2;font-size:0.9rem}
-    .success{display:none;margin-top:0.5rem;padding:0.75rem 1rem;border-radius:10px;background:rgba(0,232,255,0.12);border:1px solid rgba(0,232,255,0.3);color:#c9fbff}
-    .error-text{color:#ff98ac;font-size:0.92rem}
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(0,0,0,0.5); backdrop-filter: blur(10px);
+      padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .brand { font-weight: 600 }
+    nav a {
+      color: var(--text); text-decoration: none; margin: 0 0.75rem; font-weight: 500; opacity: 0.9;
+      transition: color .2s ease, opacity .2s ease;
+    }
+    nav a:hover { color: var(--accent); opacity: 1 }
+    nav a.active { color: var(--accent) }
+    section { padding: 3rem 2rem; max-width: 1100px; margin: 0 auto }
+    h1 { margin-top: 0 }
+    .tabs {
+      display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;
+      background: rgba(255,255,255,0.03); padding: 0.5rem;
+      border-radius: 12px; border: 1px solid rgba(255,255,255,0.06);
+    }
+    .tab {
+      appearance: none; border: none; cursor: pointer; font: inherit; color: var(--text);
+      padding: 0.6rem 1rem; border-radius: 10px; opacity: 0.85;
+      transition: background .2s ease, opacity .2s ease, color .2s ease;
+    }
+    .tab:hover { opacity: 1 }
+    .tab.active {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: #001014; opacity: 1; font-weight: 700;
+    }
+    .panel {
+      background: var(--panel); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px; padding: 1.5rem; backdrop-filter: blur(6px);
+    }
+    form { display: grid; gap: 1rem }
+    .row { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr }
+    @media (max-width: 760px) { .row { grid-template-columns: 1fr } }
+    .field { display: flex; flex-direction: column; gap: 0.4rem }
+    label { font-weight: 600 }
+    .req { color: var(--danger); margin-left: 0.25rem }
+    input[type="text"], input[type="email"], textarea {
+      background: #0f0f11; border: 1px solid rgba(255,255,255,0.1); color: var(--text);
+      padding: 0.8rem 0.9rem; border-radius: 10px; outline: none;
+    }
+    textarea { min-height: 160px; resize: vertical }
+    .submit {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: #001014; border: none; border-radius: 10px;
+      padding: 0.85rem 1.4rem; font-weight: 700; cursor: pointer;
+    }
+    .note { color: #9aa6b2; font-size: 0.9rem }
+    .success {
+      display: none; margin-top: 0.5rem; padding: 0.75rem 1rem; border-radius: 10px;
+      background: rgba(0,232,255,0.12); border: 1px solid rgba(0,232,255,0.3); color: #c9fbff;
+    }
+    .error-text { color: #ff98ac; font-size: 0.92rem }
+    footer { padding: 2rem; color: #9aa6b2; text-align: center }
   </style>
 </head>
 <body>
+
   <header>
-    <div class="brand">DevHub.net</div>
+    <div class="brand">DevHub</div>
     <nav>
       <a href="index.html">Home</a>
-      <a href="index.html#downloads">Downloads</a>
+      <a href="downloads.html">Downloads</a>
       <a class="active" href="support.html">Support</a>
       <a href="index.html#faq">FAQ</a>
     </nav>
@@ -54,15 +89,15 @@
   <section>
     <h1>Support</h1>
 
-    <div class="tabs" role="tablist" aria-label="Support categories">
-      <button class="tab active" type="button" role="tab" aria-selected="true" data-category="Report player">Report player</button>
-      <button class="tab" type="button" role="tab" aria-selected="false" data-category="General Support">General Support</button>
-      <button class="tab" type="button" role="tab" aria-selected="false" data-category="Ban Appeal">Ban Appeal</button>
+    <div class="tabs">
+      <button class="tab active" data-category="Report player">Report player</button>
+      <button class="tab" data-category="General Support">General Support</button>
+      <button class="tab" data-category="Ban Appeal">Ban Appeal</button>
     </div>
 
     <div class="panel">
-      <form id="support-form" novalidate>
-        <input type="hidden" name="category" id="category" value="Report player"/>
+      <form id="support-form">
+        <input type="hidden" name="category" id="category" value="Report player" />
 
         <div class="field">
           <label for="title">Title <span class="req">*</span></label>
@@ -89,42 +124,34 @@
         </div>
 
         <button type="submit" class="submit">Submit</button>
-        <div class="success" id="success">Submitted! Check the Discord channel.</div>
+        <div class="success" id="success">✅ Submitted! Check Discord.</div>
       </form>
     </div>
 
-    <p class="note" style="margin-top:1rem">We’ll never expose your webhook. Requests go to our Cloudflare Worker first, then relayed to Discord.</p>
+    <p class="note" style="margin-top:1rem">Your webhook stays hidden. This form sends to our Cloudflare Worker, which relays to Discord securely.</p>
   </section>
 
-  <footer style="padding:2rem;color:#9aa6b2;text-align:center">© DevHub.net</footer>
+  <footer>© DevHub</footer>
 
   <script>
-    // Worker endpoint (live)
     const WORKER_URL = "https://discordwebhook.steamjustlol123.workers.dev/";
 
-    // Tab switching logic (this is what was missing before)
-    const tabs = Array.from(document.querySelectorAll(".tab"));
+    const tabs = document.querySelectorAll(".tab");
     const categoryInput = document.getElementById("category");
-    tabs.forEach(btn => {
-      btn.addEventListener("click", () => {
-        tabs.forEach(b => {
-          b.classList.remove("active");
-          b.setAttribute("aria-selected", "false");
-        });
-        btn.classList.add("active");
-        btn.setAttribute("aria-selected", "true");
-        categoryInput.value = btn.dataset.category;
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+        categoryInput.value = tab.dataset.category;
       });
     });
 
-    // Form submit
     const form = document.getElementById("support-form");
     const successBox = document.getElementById("success");
 
     function showErr(id, show) {
       const el = document.getElementById(id);
-      if (!el) return;
-      el.hidden = !show;
+      if (el) el.hidden = !show;
     }
 
     form.addEventListener("submit", async (e) => {
@@ -137,36 +164,6 @@
       const email = document.getElementById("email").value.trim();
       const category = categoryInput.value;
 
-      // Basic validation
       showErr("err-title", !title);
       showErr("err-description", !description);
-      showErr("err-discord", !discord);
-      if (!title || !description || !discord) return;
-
-      const payload = { title, description, discord, email, category };
-
-      try {
-        const res = await fetch(WORKER_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-        const data = await res.json().catch(() => ({}));
-
-        if (!res.ok || data.ok !== true) {
-          const msg = (data && (data.error || data.text)) || `Request failed (${res.status})`;
-          alert("Error: " + msg);
-          return;
-        }
-
-        form.reset();
-        // Keep the selected category after reset
-        document.querySelector(".tab.active")?.click();
-        successBox.style.display = "block";
-      } catch (err) {
-        alert("Network error: " + err.message);
-      }
-    });
-  </script>
-</body>
-</html>
+      show
